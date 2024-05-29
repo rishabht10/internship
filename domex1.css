@@ -1,0 +1,25 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+    height: 100vh;
+    
+    
+}
+.innerForm{
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    border-radius: 6px;
+    box-shadow: 2.6px 2.6px 16px rgb(132, 132, 132);
+    padding: 16px;
+    width: 96vw;
+    height: 52vh;
+}
+
+.form input{
+    width: 76vw;
+}
