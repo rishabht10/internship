@@ -1,0 +1,43 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.fields{
+    display: grid;
+    grid-template-columns: 260px 660px;
+    row-gap: 16px;
+    
+}
+
+#inputdata{
+    margin: 26px;
+    padding: 16px;
+    border-radius: 16px;
+    height:60vh;
+    width: 86vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    
+    box-shadow: 2.6px 2.6px 16px rgb(112, 112, 112);
+}
+
+#outputTable{
+    width: 86vw;
+    margin: 26px;
+    
+    padding: 16px;
+    border-radius: 16px;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    display: none;
+
+    box-shadow: 2.6px 2.6px 16px rgb(112, 112, 112);
+    
+}
