@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Check</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+   
+    
+
+            <style>
+                body{
+                    background: url("https://images.unsplash.com/photo-1716980197262-ce400709bf0d?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+                    background-repeat: no-repeat;
+                    background-size: 100%;
+                    display: flex;
+                    background-repeat: repeat-y;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content:space-around;
+                    /* padding-top: 66px; */
+                    /* border: 2px solid red; */
+                    height: 100vh;
+                    font-family: 'Chivo Mono';
+
+                }
+                .main{
+                    display: grid;
+                    grid-template-columns: 4fr 8fr;
+                    width: 76vw;
+                    height: 66vh;
+                    column-gap: 6.6px;
+                   
+                    
+
+                }
+                .res{
+                    border-radius: 6px;
+                    backdrop-filter: blur(16px);
+                    border: 2px solid rgb(239, 239, 239);
+                    box-shadow: 2.6px 2.6px 16px rgb(69, 69, 69);
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: space-around;
+                    font-weight: 600;
+                    padding: 26px;
+                    color: white;
+                    font-size: 22.6px;
+                }
+                .form{
+                    display: grid;
+                    grid-template-rows: 6fr 6fr;
+                    row-gap: 6px;
+                    padding: 56px;
+                    /* backdrop-filter: blur(6px); */
+                    background-color: white;
+                    border: 2px solid white;
+                    border-radius: 6px;
+                    box-shadow: 2.6px 2.6px 16px rgb(144, 203, 255);
+                    
+                }
+                .query{
+                    display: flex;
+                    box-shadow: 2.6px 2.6px 16px rgb(57, 57, 57);
+                    flex-direction: column;
+                    justify-content: space-around;
+                    padding: 56px;
+                    align-items: flex-start;
+                    border: 2px solid rgb(226, 226, 226);
+                    border-radius: 6px;
+                    /* background-color: rgb(26, 40, 62); */
+                }
+                .longlat{
+                    width: 60vw;
+                    border-radius: 6px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    height: 16.76vh;
+                    font-size: 22.6px;
+                    font-weight: 600;
+                    /* color: white; */
+                    background: linear-gradient(to right,rgb(44, 62, 74),rgb(255, 242, 242));
+                }
+
+                #f1{
+                    color: rgb(255, 77, 77);
+                }
+
+                #f2{
+                    color: rgb(139, 201, 255);
+                }
+
+                #desc{
+                    font-size: 26px;
+                }
+
+
+                span{
+                    color: black;
+                }
+
+                #wim{
+                    width: 66px;
+                }
+                
+            </style>
+
+            
+            
+</head>
+<body>
+
+    <h1>Weather Check</h1>
+
+    <div class="fluid-container main" id="main">
+        <div class="query" id="qry">
+            <div class="form">
+                <input type="text" id="name" placeholder="Enter City">
+                <button type="button " onclick="getWData()" class="btn btn-dark">Get Weather</button>
+
+            </div>
+           
+        </div>
+        <div class="res">
+            <h4>Weather Stats</h4>
+            <div id="desc">Weather info will show up here</div>
+         <div>Max Temperature : <span id="f1">Will Appear here</span></div>
+         <div>Min Temperature : <span id="f2">Will Appear here</span> </div>
+         <div>Visibility : <span id="f3">Will Appear here</span></div>
+         <div>Wind Speed : <span id="f4">Will Appear here</span></div>
+        </div>
+
+
+
+
+    </div>
+    <div class="longlat">
+        <p>Longitude : <span id="f5">Will Appear here</span> </p>
+        <p>Latitude : <span id="f6">Will Appear Here</span></p>
+
+    </div>
+
+   
+
+    
+
+
+    <script >
+       
+        let api_key='bcd6c7acb03df068ffc3b2935609f195';
+
+
+        async function  getWData(){
+
+            let cityName=document.getElementById('name').value;
+
+                
+                 let data=await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${api_key}&units=metric`);
+                 let res=await data.json();
+                 console.log(res);
+                 let f0=res.weather['0'].description;
+                 document.getElementById('desc').innerText="";
+                 document.getElementById('desc').innerHTML=`<span>${f0}</span><img src="http://www.openweathermap.org/img/w/${res.weather['0'].icon}.png" alt="" id="wim">`
+                
+                 let f1=res['main']['temp_max'];
+                 let f2=res.main.temp_min;
+                 let f3=res.visibility;
+                 let f4=res.wind.speed;
+
+                console.log(res.weather['0'].icon)
+               
+                 document.getElementById('f1').innerText=`${f1}`;
+                 document.getElementById('f2').innerText=`${f2}`;
+                 document.getElementById('f3').innerText=`${f3}`;
+                 document.getElementById('f4').innerText=`${f4}`;
+                 
+                 
+                 document.getElementById('f5').innerText=`${res.coord.lon}`;
+                 document.getElementById('f6').innerText=`${res.coord.lat}`;
+            }
+               
+            
+            </script>
+    
+       
+</body>
+</html>

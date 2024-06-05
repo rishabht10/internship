@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+
+body{
+        font-family: "Montserrat";
+
+        background:linear-gradient(to right,rgb(214, 214, 214),rgb(255, 130, 130));
+
+    }
+
+    nav{
+        display: flex;
+        flex-direction: row;
+        align-items:center;
+        justify-content: space-between;
+        /* border: 2px solid red; */
+        background-color: white;
+        height: 76px;
+        font-size: 17.6px;
+        font-weight: 600;
+    }
+
+    nav ul{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+       margin-top: 16px;
+        height: 76px;
+        /* border: 2px solid red; */
+        width: 760px;
+        height: 60px;
+        
+
+
+    }
+
+    nav ul li{
+        list-style: none;
+    }
+    nav ul li a{
+        text-decoration: none;
+        color: black;
+    }
+
+    nav ul li a:hover{
+color: rgb(253, 89, 89);
+    }
+
+    #logo{
+        font-size: 22.6px ;
+        font-weight: 700;
+        /* font-family: 'Bungee'; */
+    }
+
+   
+
+   
+    nav button{
+        font-weight: 600;
+height: 76px;
+background-color: rgb(253, 89, 89);
+border: none;
+color: white;
+width: 160px;
+transition-property: all;
+transition-duration: 0.16s;
+transition-timing-function: ease-in-out;
+    }
+
+    nav button:hover{
+background-color: black;
+    }
+
+    .details{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        /* border: 2.6px solid red; */
+        height: fit-content;
+        /* border: 6px solid red; */
+    }
+
+    .dethead{
+        display: flex;
+        flex-direction: row;
+        height: 12.6vh;
+        width: 90vw;
+
+       
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .dethead span{
+        font-weight: 600;
+        /* font-family: "Press Start 2P"; */
+    }
+
+ .carsl{
+    /* margin-top: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    height: 70vh;
+    
+    width: 76vw; */
+    /* border: 2px solid rgb(126, 33, 33); */
+   
+ }
+
+ .trailer{
+    margin-top: 26px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 86vh;
+    border: 6px solid red;
+    width: 100vw;
+    /* display: none; */
+    
+
+ }
+
+ .trailer iframe{
+    width: 660px;
+    height: 56vh;
+    box-shadow: 2.6px 2.6px 16px rgb(51, 51, 51);
+ }
+
+ .aboutgame{
+border: 6px solid red;
+display: grid;
+grid-template-columns: 8fr 4fr;
+ }
+
+ .cardbg{
+    border-radius: 0px;
+    transform: scale(1.07);
+    transition-property: all;
+    transition-duration: 0.16s;
+    transition-timing-function: ease-in-out;
+ }
+ .cardbg:hover{
+    box-shadow: 2.6px 2.6px 16px rgb(232, 232, 232);
+ }   
+ .cardbg img{
+    border-radius: 0px;
+ }
+
+ .cardright{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: rgb(246, 74, 74);
+ }
+
+ .hardware{
+    margin-top: 26px;
+    margin-bottom: 26px;
+    display: grid;
+    grid-template-columns: 6fr 6fr;
+    padding: 16px;
+    column-gap: 26px;
+    
+ }
+ .config{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 2px solid red;
+    background-color: white;
+    padding: 26px;
+    box-shadow: 2.6px 2.6px 16px rgb(51, 51, 51);
+ }
+
+ .vids{
+    display: grid;
+    grid-template-columns: 6fr 6fr;
+    /* grid-template-rows: 100px 100px; */
+    column-gap: 16px;
+ }
+
+ .vids h6{
+    text-align: center;
+    font-size: 22.6px;
+    font-weight: 600;
+ }
+
+ .purchase{
+    transition-property: all;
+    transition-duration: 0.16s;
+    transition-timing-function: ease-in-out;
+    border: none;
+    font-weight: 600;
+ }
+
+ .purchase:hover{
+    background-color: white;
+    color: black;
+ }
+    </style>
+</head>
+<body>
+
+    <nav class="sticky-top">
+       
+        <ul>
+            <li id="logo">Open World Station</li>
+            <li><a href="/assignments/exercise7/index.html">Home</a></li>
+            <li><a href="">AAA Games</a></li>
+            <li><a href="">FPS Games</a></li>
+            <li><a href="">About Us</a></li>
+           
+        </ul>
+        <Button>Deals -></Button>
+            </nav>
+
+
+            <div class="details">
+                <div class="dethead">
+                    <h4><span>Uncharted 4 : A Thief's End</span></h4>
+                    
+                    <button type="button" class="btn btn-dark rounded-0 purchase">Purchase To Gift</button>
+                </div>
+
+                <div class="aboutgame">
+
+                    <div class="carsl" id="carsl">
+                        <div id="carouselId" class="carousel slide " data-bs-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li
+                                    data-bs-target="#carouselId"
+                                    data-bs-slide-to="0"
+                                    class="active"
+                                    aria-current="true"
+                                    aria-label="First slide"
+                                ></li>
+                                <li
+                                    data-bs-target="#carouselId"
+                                    data-bs-slide-to="1"
+                                    aria-label="Second slide"
+                                ></li>
+                                <li
+                                    data-bs-target="#carouselId"
+                                    data-bs-slide-to="2"
+                                    aria-label="Third slide"
+                                ></li>
+                            </ol>
+                            <div class="carousel-inner " role="listbox">
+                                <div class="carousel-item  active">
+                                    <img
+                                        src="../assets/un1.jpg"
+                                        class="w-100 d-block"
+                                        alt="First slide"
+                                    />
+                                </div>
+                                <div class="carousel-item">
+                                    <img
+                                        src="../assets/un2.jpg"
+                                        class="w-100 d-block"
+                                        alt="Second slide"
+                                    />
+                                </div>
+                                <div class="carousel-item">
+                                    <img
+                                        src="../assets/un3.jpg"
+                                        class="w-100 d-block"
+                                        alt="Third slide"
+                                    />
+                                </div>
+                            </div>
+                            <button
+                                class="carousel-control-prev"
+                                type="button"
+                                data-bs-target="#carouselId"
+                                data-bs-slide="prev"
+                            >
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button
+                                class="carousel-control-next"
+                                type="button"
+                                data-bs-target="#carouselId"
+                                data-bs-slide="next"
+                            >
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+
+                        
+                        </div>
+
+                        <div class="cardright">
+                            <div class="card cardbg" style="width: 16rem; height: 396px;">
+                                <img src="https://images6.alphacoders.com/530/thumb-1920-530976.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                  <h5 class="card-title">Card title</h5>
+                                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                  <a href="#req" class="btn btn-danger rounded-0">View Requirements</a>
+                                </div>
+                              </div>
+                              <button type="button" class="btn btn-dark rounded-0 purchase">Purchase Now </button>
+                        </div>
+
+                        
+                        
+
+                        
+
+                         
+
+                </div>
+
+
+                
+
+                    
+                <!-- <button onclick="showHideTrailer()" type="button" class="btn btn-dark rounded-0">Click To View Game Trailer</button>  -->
+             </div>
+
+                
+
+                <div class="trailer" id="vid">
+                    <h4>Game Trailer</h4>
+                    <div class="vids">
+
+                        <?xml version="1.0" encoding="utf-8" ?>
+                    <j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+                             <iframe src="https://www.youtube.com/embed/s1QiCtwupK4?si=X6GsyHtv3bW1QJL3"></iframe> 	
+                    </j:jelly>
+                    
+
+                    <?xml version="1.0" encoding="utf-8" ?>
+                    <j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+                             <iframe src="https://www.youtube.com/embed/s1QiCtwupK4?si=X6GsyHtv3bW1QJL3"></iframe> 	
+                    </j:jelly>
+
+                    <h6> Trailer 1</h6>
+
+                    <h6> Trailer 2</h6>
+
+
+                    </div>
+                    
+    
+                    <button onclick="showHideTrailer()" type="button" class="btn btn-danger rounded-0">More Details About Game</button>
+          
+                </div>
+
+                <div class="hardware" id="req">
+
+
+                    
+                    <div class="config">
+                        <h6>Required :</h6>
+                        <ul>
+                            <li>OS: Windows 10 (64bit versions only)</li>
+                            <li>Processor: AMD FX 6300 @ 3.8 GHz, Ryzen 3 - 1200, Intel Core i5 2400 @ 3.1 GHz (MORE DETAILS HERE)</li>
+                            <li>Memory: 8 GB RAM</li>
+                            <li>Graphics: AMD Radeon R9 285, NVIDIA GeForce GTX 660 (2GB VRAM with Shader Model 5.0) (MORE DETAILS HERE)</li>
+                            <li>DirectX: Version 11</li>
+                            <li>Storage: 46+ GB available space</li>
+
+                        </ul>
+
+                    </div>
+                    <div class="config">
+                        <h6>Recommended:</h6>
+                        <ul>
+
+                            
+                                <li>OS: Windows 10 (64bit versions only)</li>
+                                <li>Processor: AMD FX 6300 @ 3.8 GHz, Ryzen 3 - 1200, Intel Core i5 2400 @ 3.1 GHz (MORE DETAILS HERE)</li>
+                                <li>Memory: 8 GB RAM</li>
+                                <li>Graphics: AMD Radeon R9 285, NVIDIA GeForce GTX 660 (2GB VRAM with Shader Model 5.0) (MORE DETAILS HERE)</li>
+                                <li>DirectX: Version 11</li>
+                                <li>Storage: 46+ GB available space</li>
+    
+                            
+
+                        </ul>
+                        
+                    </div>
+
+                </div>
+
+            </div>
+
+           
+
+
+
+
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>
+        let showHideTrailer=()=>{
+           if( document.getElementById("vid").style.display==="flex"){
+            document.getElementById("vid").style.display="none";
+            document.getElementById("carsl").style.display="flex";
+           }
+           else{
+
+            document.getElementById("vid").style.display="flex"
+            document.getElementById("carsl").style.display="none";
+
+           }
+
+           
+        }
+    </script>
+</body>
+</html>
