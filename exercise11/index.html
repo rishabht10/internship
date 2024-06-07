@@ -27,6 +27,9 @@
                     font-family: 'Chivo Mono';
 
                 }
+                .res h4{
+                    border-bottom: 2.6px solid rgb(216, 216, 216);
+                }
                 .main{
                     display: grid;
                     grid-template-columns: 4fr 8fr;
@@ -34,13 +37,13 @@
                     height: 66vh;
                     column-gap: 6.6px;
                    
-                    
+                     
 
                 }
                 .res{
                     border-radius: 6px;
                     backdrop-filter: blur(16px);
-                    border: 2px solid rgb(239, 239, 239);
+                    border: 2.6px solid rgb(239, 239, 239);
                     box-shadow: 2.6px 2.6px 16px rgb(69, 69, 69);
                     display: flex;
                     flex-direction: column;
@@ -70,7 +73,7 @@
                     justify-content: space-around;
                     padding: 56px;
                     align-items: flex-start;
-                    border: 2px solid rgb(226, 226, 226);
+                    border: 2.6px solid rgb(226, 226, 226);
                     border-radius: 6px;
                     /* background-color: rgb(26, 40, 62); */
                 }
@@ -96,8 +99,9 @@
                     color: rgb(139, 201, 255);
                 }
 
-                #desc{
+                #desc span{
                     font-size: 26px;
+                    color: white;
                 }
 
 
@@ -141,8 +145,8 @@
 
     </div>
     <div class="longlat">
-        <p>Longitude : <span id="f5">Will Appear here</span> </p>
-        <p>Latitude : <span id="f6">Will Appear Here</span></p>
+        <p>Longitude  <span id="lon"></span> : <span id="f5">Will Appear here</span> </p>
+        <p>Latitude <span id="lat"></span> : <span id="f6">Will Appear Here</span></p>
 
     </div>
 
@@ -175,14 +179,15 @@
 
                 console.log(res.weather['0'].icon)
                
-                 document.getElementById('f1').innerText=`${f1}`;
-                 document.getElementById('f2').innerText=`${f2}`;
-                 document.getElementById('f3').innerText=`${f3}`;
-                 document.getElementById('f4').innerText=`${f4}`;
+                 document.getElementById('f1').innerText=`${f1} deg Celsius`;
+                 document.getElementById('f2').innerText=`${f2} deg Celsius`;
+                 document.getElementById('f3').innerText=`${f3} meters`;
+                 document.getElementById('f4').innerText=`${f4} Km/hr`;
                  
-                 
-                 document.getElementById('f5').innerText=`${res.coord.lon}`;
-                 document.getElementById('f6').innerText=`${res.coord.lat}`;
+                 document.getElementById('lon').innerText=`of ${cityName}`;
+                 document.getElementById('lat').innerText=`of ${cityName}`;
+                 document.getElementById('f5').innerText=`${res.coord.lon} deg`;
+                 document.getElementById('f6').innerText=`${res.coord.lat} deg`;
             }
                
             
